@@ -1,0 +1,32 @@
+
+header.site-header{
+	width: 100%;
+	padding: 1em;
+}
+
+div.site-content{
+	width: 70%;
+	margin: auto;
+}
+
+.flexy{
+	display: flex;
+	flex-direction: row;
+}
+
+div.content-area{
+	flex-grow: 2;
+	padding: 1em;
+}
+
+aside.complementary{
+	flex-grow: 1;
+	padding: 1em;
+}
+
+footer.site-footer{
+	width: 100%; 
+	padding: 1em;
+}
+
+
