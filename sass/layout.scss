@@ -1,0 +1,61 @@
+header.site-header {
+	padding: 1em;
+	width: 100%;
+}
+
+.inner {
+	margin: auto;
+	max-width: $content-max;
+	width: $inner-width;
+}
+
+.flexy {
+	display: flex;
+	flex-direction: row;
+	position: relative;	
+	&.reverse {
+		flex-direction: row-reverse;
+	}
+	&.top-down{
+		flex-direction: column;
+	}
+
+}
+
+div.site-content .flexy{
+	@media( max-width: 1000px){
+
+		flex-direction: column;
+		&.reverse{
+			flex-direction: column;
+		}		
+
+	}
+
+}
+
+div.content-area {
+	flex-basis: 0;
+	flex-grow: 3;
+	max-width: 67%;	
+	padding: 1em;
+}
+
+.page-template-tmpl-full div.content-area {
+	max-width: $content-max;
+	margin: auto;
+}
+
+aside.widget-area {
+	flex-basis: 0;
+	flex-grow: 1;
+	min-width: 33%;
+	padding: 1em;
+}
+
+footer.site-footer {
+	padding: 1em;
+	width: 100%; 	
+}
+
+

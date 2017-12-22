@@ -1,0 +1,15 @@
+aside.widget-area{
+
+	&.sticks-to-top{
+		position: sticky;
+		top: 0;
+		left: 0;
+	}
+
+	ul{
+		list-style: none;
+		margin: 0;		
+		padding: .5em;
+	}
+	
+}
