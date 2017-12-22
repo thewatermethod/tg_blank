@@ -13,11 +13,22 @@
 		</div><!-- flexy -->
 	</div><!-- #content -->
 
+		<?php 
+
+		if ( is_active_sidebar( 'sidebar-2' ) ) {	?>
+
+
+		<aside id="secondary" class="widget-area subfooter flexy" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-2' ); ?>
+		</aside><!-- #secondary -->
+
+	<?php } ?>
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twilitgrotto' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'twilitgrotto' ), 'WordPress' ); ?></a>
+			Theme by <a href="https://whalingcityweb.com/" rel="designer">Whaling City Web</a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'twilitgrotto' ), 'twilitgrotto', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' ); ?>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twilitgrotto' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'twilitgrotto' ), 'WordPress' ); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

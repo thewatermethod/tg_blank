@@ -1,8 +1,8 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
+ * Helper functions
  *
- * Eventually, some of the functionality here could be replaced by core features.
+ * Included in this file with the idea that they will be either removed or moved into the main theme function.
  *
  * @package twilitgrotto
  */
@@ -51,22 +51,22 @@ function catch_that_image() {
 
 function twilit_grotto_filter_content( $content ){
 
-	//filter out <b>, <u>, and <i> tags from the content
-	global $allowedposttags;
-	unset( $allowedposttags['b'] );
-	unset( $allowedposttags['u'] );
-	unset( $allowedposttags['i'] );
+	// //filter out <b>, <u>, and <i> tags from the content
+	// global $allowedposttags;
+	// unset( $allowedposttags['b'] );
+	// unset( $allowedposttags['u'] );
+	// unset( $allowedposttags['i'] );
 
-	$filtered = wp_kses_post( $content ); 		
-	$content = $filtered;
+	// $filtered = wp_kses_post( $content ); 		
+	// $content = $filtered;
 
-	//filter out empty p, h1, h2 tags
-	$content = force_balance_tags($content);
-	$content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
-	$content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
+	// //filter out empty p, h1, h2 tags
+	// $content = force_balance_tags($content);
+	// $content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+	// $content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
 
-	$content = preg_replace( '#<h[1-6]>\s*+(<br\s*/*>)?\s*</h[1-6]>#i', '', $content );
-	$content = preg_replace( '~\s?<h[1-6]>(\s|&nbsp;)+</h[1-6]>\s?~', '', $content );
+	// $content = preg_replace( '#<h[1-6]>\s*+(<br\s*/*>)?\s*</h[1-6]>#i', '', $content );
+	// $content = preg_replace( '~\s?<h[1-6]>(\s|&nbsp;)+</h[1-6]>\s?~', '', $content );
 
 	//returns the content
 	return $content;

@@ -1,0 +1,44 @@
+h1.site-title, p.site-title{
+	margin: 0;
+}
+
+.site-title a, .site-title a:visited{
+	text-decoration: none;
+	color: $link-color;
+}
+
+
+header.site-header {
+
+	@media( max-width:600px ){
+		height: 5rem;
+	}
+
+	&.header-image {
+		background-size: cover;
+		background-repeat: no-repeat;
+		min-height: 55vh;
+
+	}
+
+
+	.flexy{
+	
+		div.site-branding{
+			flex-basis: 0;
+			flex-grow: 1;		
+		}
+
+		nav.main-navigation{
+			flex-basis: 0;
+			flex-grow: 2;
+				
+			@media( max-width: 850px){
+				flex-grow: 1;
+			}
+
+		}
+
+	}
+
+}

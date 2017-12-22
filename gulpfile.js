@@ -2,7 +2,7 @@
 	Open command prompt as administrator
 
 	cd YOUR-THEME-DIRECTORY
-	npm install gulp  gulp-sass gulp-concat gulp-minify gulp-uglify gulp-sourcemaps run-sequence gulp-watch browser-sync gulp-clean gulp-csslint --save-dev 
+	npm install gulp gulp-sass gulp-concat gulp-minify gulp-uglify gulp-sourcemaps run-sequence gulp-watch browser-sync gulp-clean gulp-csslint --save-dev 
 	gulp
 
 */
@@ -14,6 +14,7 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	sourcemaps = require('gulp-sourcemaps'),
 	cleanCSS = require('gulp-clean-css'),
+	minify = require('gulp-minify'),
 	runSequence = require('run-sequence'),
 	browserSync = require('browser-sync').create(),
 	sass = require( 'gulp-sass' ), 
@@ -22,7 +23,7 @@ var gulp = require('gulp'),
 
 // this task builds and minifies the sass into css for the theme
 gulp.task( 'build-sass', function(){
-	return gulp.src(['sass/*.scss'])
+	return gulp.src(['sass/vars.scss','sass/*.scss'])
 		.pipe( sourcemaps.init() )
 		.pipe( concat( 'compiled.scss') )
 		.pipe( sass({ outputStyle: 'compressed' }).on('error', sass.logError) )
@@ -33,8 +34,8 @@ gulp.task( 'build-sass', function(){
 
 // this task minifies the javascript
 gulp.task('compress-js', function() {
- return gulp.src(['js/*.js'])
-    .pipe( concat( 'compiled.js' ) )
+return gulp.src(['js/*.js'])
+   .pipe( concat( 'compiled.js' ) )
     .pipe(minify({
         ext:{
             src:'-debug.js',
