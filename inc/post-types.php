@@ -26,7 +26,17 @@
 		post-formats
 */
 
-$post_types = array();
+$testimonials = array(
+	"slug" => 'testimonial',
+	"display_plural" => 'Testimonials',
+	"display_singular" => 'Testimonial',
+	"description" => 'Customer testomonials',
+	"supports" => array(),
+	"taxonomies" => array(),
+);
+
+
+$post_types = array( $testimonials );
 
 /*--------------------------------------------------------------------------------------
  *
