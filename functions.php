@@ -28,7 +28,16 @@ class TwilitGrotto {
    		array(
    			'slug' => 'main-menu',
    			'name' => 'Main Menu',
-   		),
+		),
+		array(
+			'slug' => 'top-menu',
+			'name' => 'Top Menu',
+		),
+		array(
+			'slug' => 'footer-menu',
+			'name' => 'Footer Menu',
+		),   
+
    );
 
 	// @static array _dynamic_sidebars The dynamic sidebars for this theme
@@ -42,16 +51,15 @@ class TwilitGrotto {
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
     	),
-      array(
-      'name'          => 'Subfooter',
-      'id'            => 'sidebar-2',
-      'description'   => 'Add widgets here.', 'twilitgrotto',
-      'before_widget' => '<section id="%1$s" class="widget %2$s">',
-      'after_widget'  => '</section>',
-      'before_title'  => '<h2 class="widget-title">',
-      'after_title'   => '</h2>',
-      ),
-
+		array(
+		'name'          => 'Subfooter',
+		'id'            => 'sidebar-2',
+		'description'   => 'Add widgets here.', 'twilitgrotto',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+		),
    );
 
    // ! @static array $default_widgets The default widgets that we want to unregister
