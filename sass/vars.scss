@@ -1,3 +1,13 @@
-$link-color: royalblue;
 $inner-width: 90;
 $content-max: 1450px;
+
+//color palette
+$primary-color: #1b5e20;
+$primary-color-light:#4c8c4a;
+$primary-color-dark: #003300;
+
+$secondary-color: #fdd835;
+$secondary-color-light:#ffff6b;
+$secondary-color-dark: #c6a700;
+
+$link-color: $primary-color-dark;
