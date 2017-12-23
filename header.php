@@ -47,13 +47,22 @@
 				endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<nav id="top-navigation" class="top-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 	            	<div class="menui top-menu"></div>
 	            	<div class="menui mid-menu"></div>
 	            	<div class="menui bottom-menu"></div>
 	    		</button>
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'top-menu', 'menu_id' => 'top-menu' ) ); ?>
+			</nav><!-- #site-navigation -->
+
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+	            	<div class="menui top-menu"></div>
+	            	<div class="menui mid-menu"></div>
+	            	<div class="menui bottom-menu"></div>
+	    		</button>
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_id' => 'main-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 			
 			<?php tg_get_header_message(); ?>
