@@ -292,7 +292,6 @@ class TwilitGrotto {
     *
     * Register the custom post types for this theme
     *
-    *
     *--------------------------------------------------------------------------------------*/
      
 	public static function register_post_types(){ 
