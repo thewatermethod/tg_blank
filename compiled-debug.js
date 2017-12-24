@@ -1,16 +1,20 @@
 window.onload = function(){
-    insertSearch();
+    if( document.querySelector('body').classList.contains('page-template-tmpl-full') ){
+        insertSearch( '#main-menu');
+    }
 };
 
 
 //inserts the search box in the top nav
-function insertSearch(){
+function insertSearch( selectorString ){
 
-    if( !document.querySelector('#main-menu' ) ){
+    console.log( selectorString );
+
+    if( !document.querySelector( selectorString ) ){
         return false;
     }
 
-    var mainMenu = document.querySelector('#main-menu');
+    var parentElement = document.querySelector( selectorString );
     
     var searchForm = document.createElement('form');
     searchForm.setAttribute( 'role', 'search');
@@ -45,7 +49,7 @@ function insertSearch(){
     searchForm.appendChild( label );
     searchForm.appendChild( submit );    
 
-    mainMenu.appendChild(searchForm);
+    parentElement.appendChild(searchForm);
 }
 /**
  * File navigation.js.
