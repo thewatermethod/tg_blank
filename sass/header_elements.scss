@@ -21,9 +21,11 @@ header.site-header {
 
 	}
 
+	// this wraps the logo and the menu
+	.flexy{		
+		background: black;
+		margin-top: 30px;
 
-	.flexy{
-	
 		div.site-branding{
 			flex-basis: 0;
 			flex-grow: 1;		

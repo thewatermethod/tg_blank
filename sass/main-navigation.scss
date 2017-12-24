@@ -1,5 +1,18 @@
 nav ul {
-    display: flex;
+    display: flex;    
     flex-direction: row;
+    font-size: 1.25em;
     list-style: none;
+    
+    li {
+        padding: 0 1em;
+    } 
+}
+
+nav.main-navigation {
+    margin-right: 1em;
+    
+    ul li a {
+        color: white;
+    }    
 }

@@ -20,6 +20,18 @@
 
 <?php tg_google_fonts(); ?>
 <?php tg_get_color_scheme(); ?>
+<?php $logo = tg_get_logo(); ?>
+
+<?php 
+
+	$title_class = 'site-title';
+
+	if( $logo ) {
+		$title_class = 'site-title screen-reader-text';
+	}
+
+?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -29,14 +41,19 @@
 	<header id="masthead" class="site-header <?php if( get_header_image() ) : ?>header-image<?php endif; ?>" 
 			role="banner" style="<?php if( get_header_image() ) : ?> background-image: url( <?php echo header_image(); endif; ?>);">
 
-		<div class="flexy inner">
+		<div class="flexy">
 
 			<div class="site-branding">
 				<?php
-				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+				if( $logo ){
+					echo '<img src='.$logo[0].' alt="">';
+				}
+
+				if ( is_front_page() || is_home() ) : ?>
+					<h1 class="<?php echo $title_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<p class="<?php echo $title_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 				endif;
 
