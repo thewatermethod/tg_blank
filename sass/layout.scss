@@ -12,6 +12,7 @@ header.site-header {
 	display: flex;
 	flex-direction: row;
 	position: relative;	
+	
 	&.reverse {
 		flex-direction: row-reverse;
 	}
@@ -22,6 +23,7 @@ header.site-header {
 }
 
 div.site-content .flexy{
+
 	@media( max-width: 1000px){
 
 		flex-direction: column;
@@ -38,6 +40,12 @@ div.content-area {
 	flex-grow: 3;
 	max-width: 67%;	
 	padding: 1em;
+
+	&.home-tmpl {
+		max-width: 90%;
+		margin: auto;
+	}
+
 }
 
 .page-template-tmpl-full div.content-area {
