@@ -15,7 +15,7 @@ class TwilitGrotto {
    static $path;
 	
    // ! @static int $excerpt_length How long excerpts should be
-	static $excerpt_length = 20;
+   static $excerpt_length = 20;
    
    // ! @static string $excerpt_more The trailing string for excerpts
    static $excerpt_more = '... ';
@@ -97,14 +97,14 @@ class TwilitGrotto {
     	'index.php',						// Dashboard
     	'edit.php',							// Posts
     	'upload.php',						// Media
-    	'link-manager.php',				// Links
-    	'edit.php?post_type=page',		// Pages
+    	'link-manager.php',					// Links
+    	'edit.php?post_type=page',			// Pages
     	'edit-comments.php',				// Comments
     	'themes.php',						// Themes
     	'plugins.php',						// Plugins
     	'users.php',						// Users
     	'tools.php',						// Tools
-    	'options-general.php'			// Settings
+    	'options-general.php'				// Settings
       */
    );  
 
@@ -136,16 +136,19 @@ class TwilitGrotto {
 
       	
 		//set the theme's base path
-  	self::$path = get_stylesheet_directory();
+  		self::$path = get_stylesheet_directory();
     
-  	// Set the theme's base url
-  	self::$url = get_stylesheet_directory_uri();
+  		// Set the theme's base url
+ 	 	self::$url = get_stylesheet_directory_uri();
 
 		// Add theme support for menus
 		self::register_nav_menus(); 
 		
 		// Register custom post types
 		add_action('init', array(__CLASS__, 'register_post_types'));
+
+		//register acf fields
+		self::register_acf_fields();
 
 		// Register dynamic sidebars
 		add_action('init', array(__CLASS__, 'register_sidebars'));
@@ -260,7 +263,20 @@ class TwilitGrotto {
       		}
       	}
     }
-   
+
+   /*--------------------------------------------------------------------------------------
+    *
+    * Hide dashboard widgets
+    * @uses $wp_meta_boxes
+    *
+    *--------------------------------------------------------------------------------------*/
+    
+	public static function register_acf_fields() {
+		require_once 'inc/acf.php';
+    }
+   	
+
+
    /*--------------------------------------------------------------------------------------
     *
     * Hide dashboard widgets

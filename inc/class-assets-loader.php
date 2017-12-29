@@ -34,7 +34,16 @@ class TwilitGrotto_Assets_Loader {
       /** Uncomment to use Font Awesome **/
       //wp_enqueue_script( 'fa', '//use.fontawesome.com/3ad4db6811.js', array(), null);   
       
-      wp_enqueue_script( 'twilitgrotto-js', get_template_directory_uri() . '/compiled.js', array('jquery'), '20151215', true );
+      wp_register_script( 'twilitgrotto-js', get_template_directory_uri() . '/compiled.js', array('jquery'), '20151215', true );
+      
+      $site_settings = array(
+        'url' => home_url(),
+        'phone' => get_theme_mod('site_phone'),
+      );
+
+      wp_localize_script( 'twilitgrotto-js', 'siteSettings', $site_settings );
+
+      wp_enqueue_script( 'twilitgrotto-js');
 
       if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

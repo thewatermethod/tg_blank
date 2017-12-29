@@ -47,7 +47,8 @@
 				<?php
 
 				if( $logo ){
-					echo '<img src='.$logo[0].' alt="">';
+					echo '<a href="'.esc_url( home_url( '/' ) ).'">';
+					echo '<img src='.$logo[0].' alt=""></a>';
 				}
 
 				if ( is_front_page() || is_home() ) : ?>

@@ -32,6 +32,25 @@ function twilitgrotto_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+
+	// This section is for the site specific data options
+	$wp_customize->add_section( 'site_settings' , array(
+		'title'      => 'Site Settings',
+		'priority'   => 49,
+	) );
+
+	$wp_customize->add_setting( 'site_phone', array(
+		'default'           => null,
+		'sanitize_callback' => '',
+	) );
+
+	$wp_customize->add_control( 'site_phone', array(
+	 	'label'    => 'Site Phone Number',
+	 	'section'  => 'site_settings',
+	 	'type'     => 'text',
+	 	'default' => null,
+	 	'priority' => 90
+	) );
 	
 	$wp_customize->add_setting( 'header_color', array(
 		'default'           => '#fff',
@@ -81,7 +100,6 @@ function twilitgrotto_customize_register( $wp_customize ) {
 	 	'default' => 0,
 	 	'priority' => 89
 	) );
-
 
 	$wp_customize->add_setting( 'home_callout_message', array(
 		'default'           => null,
