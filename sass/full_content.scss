@@ -1,0 +1,12 @@
+.full-content{
+    
+    background: #eee;
+    margin: 1em 0;
+    padding: 1em;
+
+    &.black {
+        background: black;
+        color: white;
+        
+    }
+}

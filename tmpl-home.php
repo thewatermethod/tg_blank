@@ -82,6 +82,8 @@ get_header(); ?>
 				<?php 
 				}
 				?>
+				
+				</ul>
 
 				<div class="tab_content">
 
@@ -106,9 +108,8 @@ get_header(); ?>
 						} ?>
 				
 					</div>
-
-
-	<?php	endif;
+				
+		<?php endif;
 
 			if( have_rows('content_section') ):
 
@@ -131,7 +132,10 @@ get_header(); ?>
 
 			if( have_rows('services_summary') ):
 
-				?><div class="services-summary"><?php
+				?>
+				<h2>Septic Services We Offer</h2>
+				<div class="services-summary">
+				<?php
 
 				while( have_rows('services_summary') ): the_row(); 
 

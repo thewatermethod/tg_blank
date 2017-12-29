@@ -1,0 +1,18 @@
+.services-summary div {
+    float: left;
+    width: 33%;
+}
+
+
+@supports( display: grid ){
+    .services-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+        
+        div {
+            float: none;
+            width: auto;
+        }
+    }
+}
