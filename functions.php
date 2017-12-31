@@ -215,7 +215,25 @@ class TwilitGrotto {
 
 		if ( ! isset( $content_width ) ) $content_width = 640;
 
+		add_filter('upload_mimes',  array(__CLASS__, 'cc_mime_types') );
+
+
 	} // Closes Twilit Grotto: init()
+
+
+   /*--------------------------------------------------------------------------------------
+    *
+    * Allow svg upload to media library
+    *
+    * @param array $mimes, allowed mime types for upload
+    * @return array
+    *
+    *--------------------------------------------------------------------------------------*/	
+
+	function cc_mime_types($mimes) {
+		$mimes['svg'] = 'image/svg+xml';
+		return $mimes;
+	}
 
    /*--------------------------------------------------------------------------------------
     *
