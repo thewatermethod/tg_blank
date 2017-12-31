@@ -75,7 +75,7 @@ jQuery(document).ready(function() {
     (function (jQuery) { 
         jQuery('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
         
-        jQuery('.tab ul.tabs li a').click(function (g) { 
+        jQuery('.tab ul.tabs li').click(function (g) { 
             var tab = jQuery(this).closest('.tab'), 
                 index = jQuery(this).closest('li').index();
             

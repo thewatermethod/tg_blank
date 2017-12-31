@@ -59,55 +59,57 @@ get_header(); ?>
 			
 			if( have_rows('services_layer') ): 
 				$tab_titles = array();
-				$tab_descriptions = array();
-				$tab_thumbnails = array();
+
 			?>
 
 				<h2>Services We Offer</h2> <?php
 
 				while( have_rows('services_layer') ): the_row();
 					
-					$tab_titles[] = get_sub_field('title');
-					$tab_description[] = get_sub_field('description');
-					$tab_thumbnails[] = get_sub_field('thumbnail');						
+					$tab_titles[] = get_sub_field('title');			
 						
-				endwhile; ?>
-
-				<ul class="tabs active">
+				endwhile; 
 				
-				<?php
-
-				foreach ( $tab_titles as $tab_title ) { ?>
-					<li><?php echo $tab_title; ?></li>
-				<?php 
-				}
 				?>
-				
-				</ul>
-
-				<div class="tab_content">
-
-					<?php 
-						foreach ($tab_titles as $key => $tab_title) {
-							
-							?>
-
-					<div class="tabs_item">
+				<div class="tab">
+					<ul class="tabs">
 					
-						<h3><?php echo $tab_title; ?></h3>
-
-						<?php if( $tab_thumbnails[ $key ] ) : ?>
-							<img alt="" src="<?php echo $tab_thumbnails[ $key ];?>"> 
-						<?php endif;
-						
-						echo $tab_descriptions[$key]; 
-						
-					?></div>
-							
 					<?php
-						} ?>
-				
+
+					foreach ( $tab_titles as $tab_title ) { ?>
+						<li><?php echo $tab_title; ?></li>
+					<?php 
+					}
+					?>
+					
+					</ul>
+
+					<div class="tab_content">
+
+						<?php 
+							while( have_rows('services_layer') ): the_row();
+							$tab_description = get_sub_field('description');
+							$tab_title = get_sub_field('title');
+							$tab_thumbnail = get_sub_field('thumbnail');    
+								?>
+
+						<div class="tabs_item">
+						
+							<h3><?php echo $tab_title; ?></h3>
+
+							<?php if( $tab_thumbnail ) : ?>
+								<img alt="" src="<?php echo $tab_thumbnails;?>"> 
+							<?php endif;
+							
+							echo $tab_description; 
+							
+						?></div>
+								
+						<?php
+							endwhile;  ?>
+					
 					</div>
+				</div>
 				
 		<?php endif;
 

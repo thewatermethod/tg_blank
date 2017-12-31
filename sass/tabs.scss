@@ -24,10 +24,11 @@
     padding: 0;
     position: relative;
   }
-  .tabs a {
+  .tabs li {
     background-color: #eff0f2;
     border-bottom: 1px solid white;
     color: #888888;
+    cursor: pointer;
     font-weight: 500;
     display: block;
     letter-spacing: 0;
