@@ -23,6 +23,12 @@
     overflow: hidden;
     padding: 0;
     position: relative;
+
+    &.current {
+      background: $primary-color-dark;
+      color: white; 
+    }
+
   }
   .tabs li {
     background-color: #eff0f2;
@@ -38,17 +44,13 @@
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    border-bottom: 2px solid #87d3b7;
+    border-bottom: 2px solid $primary-color-light;
   }
   .tabs_item {
     display: none;
     padding: 30px 0;
   }
-  .tabs_item h4 {
-    font-weight: bold;
-    color: blue;
-    font-size: 20px;
-  }
+
   .tabs_item img {
     width: 200px;
     float: left;
