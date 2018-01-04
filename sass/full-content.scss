@@ -1,11 +1,11 @@
 .full-content{
     
-    background: #eee;
+    background: $primary-color-light;
     margin: 1em 0;
     padding: 1em;
 
     &.black {
-        background: #1D1F20;
+        background: $secondary-color-dark;
         color: white;
         
     }

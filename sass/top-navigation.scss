@@ -1,3 +1,7 @@
+.logged-in nav.top-navigation {
+    top: 32px;
+}
+
 nav.top-navigation {
     background: $primary-color-dark;
     font-size: .75em;
@@ -7,27 +11,32 @@ nav.top-navigation {
     width: 100%;
     z-index: 2;
 
-
     ul{     
         margin-bottom: 0;
     
         li {
             height: 100%;
-            width: 25%;
+            padding: .5em;
             text-align: center;
+            width: 25%;
 
             a {
+                border-bottom: 3px dashed $secondary-color-light;
                 color: white;
                 text-decoration: none;
+
+                &:hover{
+                    border-bottom: 3px solid $primary-color-light;
+                    color: $secondary-color-dark;
+                }
+
             }
 
             &:last-of-type {
-                background: $secondary-color-light;
+                background: $secondary-color-light;                
                 width: 50%;
-
                 a {
-                    border-bottom: 1px solid red;
-                    color: black;       
+                    border-bottom: 3px solid red;                        
                 }
             }
 

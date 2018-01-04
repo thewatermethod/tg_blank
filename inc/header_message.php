@@ -14,14 +14,14 @@ function tg_get_header_message(){
 
 		?>
 
-			<div class="hero"><?php echo get_theme_mod('home_callout_message'); ?></div>
+			<div class="hero box-shadow"><?php echo get_theme_mod('home_callout_message'); ?></div>
 
 		<?php
 
 	} else { ?>
 
 
-		   <div class="banner <?php if( get_theme_mod('show_home_callout') == 2 ): echo 'home-only'; endif; ?> "><?php echo get_theme_mod('home_callout_message'); ?></div>
+		   <div class="banner box-shadow <?php if( get_theme_mod('show_home_callout') == 2 ): echo 'home-only'; endif; ?> "><?php echo get_theme_mod('home_callout_message'); ?></div>
 
 		<?php
 	}

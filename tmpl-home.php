@@ -123,7 +123,7 @@ get_header(); ?>
 
 				?>
 
-					<div class="full-content <?php echo $bg_color;?>">
+					<div class="full-content box-shadow <?php echo $bg_color;?>">
 						<?php echo $content; ?>					
 					</div>
 
