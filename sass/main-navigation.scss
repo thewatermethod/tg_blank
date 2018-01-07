@@ -1,3 +1,7 @@
+nav {
+    z-index: 5;
+}
+
 nav ul {
     display: flex;    
     flex-direction: row;
@@ -14,5 +18,27 @@ nav.main-navigation {
     
     ul li a {
         color: white;
-    }    
+        &:hover {
+            color: darken($color: white, $amount: 40);
+            text-decoration: underline;
+        }
+    }
+    
+    @media( max-width: 850px ){
+        ul {
+            background: rgba(1,1,1,.77);
+            flex-direction: column;
+            float: none;
+            font-size: 2em;
+            height: 100vh;
+            left: 0;
+            position: fixed;        
+            right: 0;
+            text-align: center;
+            li {
+                float: none;
+            }
+        }
+    }
+    
 }

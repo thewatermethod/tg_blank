@@ -10,7 +10,9 @@ h1.site-title, p.site-title{
 
 header.site-header {
 
-	@media( max-width:600px ){
+	z-index: 5;
+
+	@media( max-width:850px ){
 		height: 5rem;
 	}
 
@@ -19,12 +21,26 @@ header.site-header {
 		background-repeat: no-repeat;
 		min-height: 55vh;
 
+		@media( max-width: 1300px ){
+			min-height: 60vh;
+		}
+
+		@media( max-width: 850px ){
+			min-height: 47vh;
+		}		
+
 	}
 
 	// this wraps the logo and the menu
 	.flexy{		
 		background: #0f0f0f;		
 		margin-top: 37px;
+
+		@media( max-width: 850px ){
+			left: 0;
+			position: fixed;
+			right: 0;
+		}
 
 		div.site-branding{
 			flex-basis: 0;

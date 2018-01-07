@@ -2,6 +2,11 @@
     display: flex;
     flex-basis: 25%;
     width: 100%;
+
+    @media( max-width: 800px ){
+        flex-direction: column;
+    } 
+
 }
 
 @supports( display: grid ){
@@ -9,23 +14,26 @@
         display: grid;
         grid-gap: 1em;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        @media( max-width: 800px ){
+            grid-template-columns: 1fr;
+        } 
     }
 }
 
-.testimonial {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-}
 
 .quote{
+    align-items: center;
     background: #fff;
+    color: transparent;
+
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;
     /* Firefox, other Gecko */
     box-sizing: border-box;
     /* Opera/IE 8+ */
+    
+    
     padding: 1.618em;
     margin: 0 0 1.618em;
     border: 1px solid #dcdcdc;
@@ -37,11 +45,11 @@
     position: relative;
     box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.05);
     -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.05);
-    -webkit-transition: all ease-in-out 0.2s;
-    -moz-transition: all ease-in-out 0.2s;
-    -ms-transition: all ease-in-out 0.2s;
-    -o-transition: all ease-in-out 0.2s;
-    transition: all ease-in-out 0.2s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
 }
 
 .quote:after,

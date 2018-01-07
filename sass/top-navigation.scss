@@ -11,8 +11,15 @@ nav.top-navigation {
     width: 100%;
     z-index: 2;
 
+
     ul{     
         margin-bottom: 0;
+
+        @media( max-width: 850px ){
+           margin-left: 0;
+           padding-left: 0;
+         } 
+
     
         li {
             height: 100%;
@@ -21,7 +28,7 @@ nav.top-navigation {
             width: 25%;
 
             a {
-                border-bottom: 3px dashed $secondary-color-light;
+                border-bottom: 3px dashed $primary-color-light;
                 color: white;
                 text-decoration: none;
 
@@ -32,19 +39,35 @@ nav.top-navigation {
 
             }
 
+            @media( max-width: 850px ){
+               display: none;
+            } 
+
+
             &:last-of-type {
                 background: $secondary-color-light;                
                 width: 50%;
                 a {
                     border-bottom: 3px solid red;                        
                 }
+
+                @media( max-width: 850px ){
+                    background: red;
+                    display: block;
+                    width: 100%;
+                } 
+     
+
+
             }
 
 
         }
 
     }
+
 }
+
 
 
 

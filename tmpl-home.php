@@ -34,7 +34,7 @@ get_header(); ?>
 					$testimonials = get_posts( $testimonial_args );
 					?>
 
-					<h2>What Customers Have Said About Us</h2>
+					<h2>What Customers Have Said About <?php echo bloginfo('name'); ?></h2>
 					<div class="testimonials">
 						
 						<?php

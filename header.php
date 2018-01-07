@@ -38,8 +38,16 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twilitgrotto' ); ?></a>
 
-	<header id="masthead" class="site-header <?php if( get_header_image() ) : ?>header-image<?php endif; ?>" 
+	<?php if(is_home() || is_front_page() ) :?>
+
+		<header id="masthead" class="site-header <?php if( get_header_image() ) : ?>header-image<?php endif; ?>" 
 			role="banner" style="<?php if( get_header_image() ) : ?> background-image: url( <?php echo header_image(); endif; ?>);">
+
+	<?php else: ?>
+
+		<header id="masthead" class="site-header" role="banner">
+
+	<?php endif; ?>
 
 		<div class="flexy">
 
@@ -65,16 +73,11 @@
 				endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav id="top-navigation" class="top-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
-	            	<div class="menui top-menu"></div>
-	            	<div class="menui mid-menu"></div>
-	            	<div class="menui bottom-menu"></div>
-	    		</button>
+			<nav id="top-navigation" class="top-navigation box-shadow" role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'top-menu', 'menu_id' => 'top-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
+			<nav id="site-navigation" class="main-navigation box-shadow" role="navigation">
 				<button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
 	            	<div class="menui top-menu"></div>
 	            	<div class="menui mid-menu"></div>
@@ -83,7 +86,11 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_id' => 'main-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 			
-			<?php tg_get_header_message(); ?>
+			<?php 
+				if( is_home() || is_front_page() ):
+					tg_get_header_message(); 
+				endif;
+			?>
 
 		</div><!-- inner -->
 	</header><!-- #masthead -->

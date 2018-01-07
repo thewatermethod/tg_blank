@@ -1,0 +1,16 @@
+.callout, a.callout, .widget a.callout{
+    background: $secondary-color;    
+    color: white;
+    display: block;
+    padding: .5em 1em;
+    margin: 1em auto;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover {
+        background: $primary-color-light;
+        color: $secondary-color-dark;
+    }
+
+}

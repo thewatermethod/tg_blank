@@ -8,13 +8,21 @@
     line-height: 1.5;
     font-weight: 300;
    -webkit-font-smoothing: antialiased;
+
+  @media( max-width: 850px ){
+    width: 100%;
+  }
+
   }
   .tabs {
     display: table;
+    padding-left: 0;
     position: relative;
+    
     overflow: hidden;
     margin: 0;
     width: 100%;
+
   }
   .tabs li {
     float: left;
@@ -27,6 +35,11 @@
       background: $primary-color-dark;
       color: white; 
     }
+
+    @media( max-width: 850px ){
+      float: none;
+    }
+
 
   }
   .tabs li {
@@ -43,10 +56,19 @@
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     border-bottom: 2px solid $primary-color-light;
+    @media( max-width: 850px ){
+      padding: 1em;
+    }
   }
   .tabs_item {
     display: none;
     padding: 30px 0;
+
+    ul {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
   }
 
   .tabs_item img {
