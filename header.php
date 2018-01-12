@@ -24,7 +24,7 @@
 
 <?php 
 
-	$title_class = 'site-title';
+	$title_class = 'site-title no-logo';
 
 	if( $logo ) {
 		$title_class = 'site-title screen-reader-text';
@@ -60,7 +60,7 @@
 				}
 
 				if ( is_front_page() || is_home() ) : ?>
-					<h1 class="<?php echo $title_class; ?>"><?php bloginfo( 'name' ); ?></h1>
+					<h1 class="<?php echo $title_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<p class="<?php echo $title_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php

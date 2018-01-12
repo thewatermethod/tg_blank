@@ -45,6 +45,11 @@ header.site-header {
 		div.site-branding{
 			flex-basis: 0;
 			flex-grow: 1;		
+
+			.no-logo {
+				padding: 10px 0;
+				text-align: center;
+			}
 		}
 
 		nav.main-navigation{
