@@ -2,7 +2,13 @@
 
 function tg_set_google_fonts(){
 
-	require 'keys.php';
+	$google_fonts_api_key = false;
+
+	include 'keys.php';
+
+	if( !$google_fonts_api_key ){
+		return false;
+	}
 
 	if ( false === ( $google_fonts = get_transient( 'google-fonts' ) ) ) {
 
@@ -10,7 +16,7 @@ function tg_set_google_fonts(){
 
 		$google_fonts = wp_remote_get( $url );
 
-	 	set_transient( 'google-fonts', $google_fonts, 24 * HOUR_IN_SECONDS );
+	 	set_transient( 'google-fonts', $google_fonts, 48 * HOUR_IN_SECONDS );
 
 	 	return json_decode( $google_fonts['body'] );
 
