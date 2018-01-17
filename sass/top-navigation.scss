@@ -13,6 +13,8 @@ nav.top-navigation {
 
 
     ul{     
+        padding: .5em;
+        justify-content: space-around;
         margin-bottom: 0;
 
         @media( max-width: 850px ){
@@ -22,21 +24,22 @@ nav.top-navigation {
 
     
         li {
+            @extend %box-shadow;
+
+            background: $primary-color-light;   
+            border-radius: 6px;         
             height: 100%;
             padding: .5em;
             text-align: center;
             width: 25%;
+            
+            &:hover{                   
+                background: $secondary-color;
+            }
 
             a {
-                border-bottom: 3px dashed $primary-color-light;
                 color: white;
                 text-decoration: none;
-
-                &:hover{
-                    border-bottom: 3px solid $primary-color-light;
-                    color: $secondary-color-dark;
-                }
-
             }
 
             @media( max-width: 850px ){
@@ -46,7 +49,11 @@ nav.top-navigation {
 
             &:last-of-type {
                 background: $secondary-color-light;                
-                width: 50%;
+                
+                &:hover{                   
+                    background: $secondary-color-dark;
+                }
+
                 a {
                     border-bottom: 3px solid red;                        
                 }
