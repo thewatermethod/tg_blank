@@ -150,9 +150,6 @@ class TwilitGrotto {
 		//register acf fields
 		self::register_acf_fields();
 
-		//initialize facebook widget
-		self::init_facebook_widget();
-
 		// Register dynamic sidebars
 		add_action('init', array(__CLASS__, 'register_sidebars'));
 		
@@ -222,19 +219,6 @@ class TwilitGrotto {
 
 
 	} // Closes Twilit Grotto: init()
-
-   /*--------------------------------------------------------------------------------------
-    *
-    * initialize facebook widget
-    *
-    * @param none
-    * @return none
-    *
-    *--------------------------------------------------------------------------------------*/	
-
-	public static function init_facebook_widget() {
-		require_once 'inc/facebook.php';
-	}
 
 
    /*--------------------------------------------------------------------------------------

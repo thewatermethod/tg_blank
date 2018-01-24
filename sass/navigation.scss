@@ -142,7 +142,7 @@ a:active {
 	display: flex;
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1000px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -162,7 +162,7 @@ button.menu-toggle{
 	padding: 0;
     position: absolute;
    	right: 5%;
-    top: 0;   
+    top: 10px;   
     width: 42px;
     z-index: 999;
 
