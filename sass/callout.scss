@@ -21,6 +21,12 @@ main.site-main {
         display: inline-block;
         font-size: 1.25em;
         width: 45%;
+
+        @media( max-width: 850px ){
+            display: block;
+            width: 100%;
+        } 
+
     }
 
 }
