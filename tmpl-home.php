@@ -13,17 +13,14 @@ get_header(); ?>
 			<?php 
 				// get number of testimonials
 
-				if( have_rows('posts_layer') ):
+				$show_tesimonials = false;
 
-					while( have_rows('posts_layer') ): the_row();
-						
-						$value = get_sub_field('number_to_show');
-				
-					endwhile;
-				
+				if( get_field('add_testimonials_block')  ):
+					$show_tesimonials = true;
+					$value = 4;
 				endif;
 			
-				if( $value > 0) {
+				if( $show_tesimonials ) {
 					
 					$testimonial_args = array(
 						'post_type' => 'testimonial',
@@ -57,16 +54,16 @@ get_header(); ?>
 
 			//
 			
-			if( have_rows('services_layer') ): 
+			if( have_rows('services_we_offer') ): 
 				$tab_titles = array();
 
 			?>
 
 				<h2>Services We Offer</h2> <?php
 
-				while( have_rows('services_layer') ): the_row();
+				while( have_rows('services_we_offer') ): the_row();
 					
-					$tab_titles[] = get_sub_field('title');			
+					$tab_titles[] = get_sub_field('service_name');			
 						
 				endwhile; 
 				
@@ -87,23 +84,18 @@ get_header(); ?>
 					<div class="tab_content">
 
 						<?php 
-							while( have_rows('services_layer') ): the_row();
-							$tab_description = get_sub_field('description');
-							$tab_title = get_sub_field('title');
-							$tab_thumbnail = get_sub_field('thumbnail');    
+							while( have_rows('services_we_offer') ): the_row();
+							$tab_description = get_sub_field('service_description');
+							$tab_title = get_sub_field('service_name');
+				
 								?>
 
 						<div class="tabs_item">
 						
 							<h3><?php echo $tab_title; ?></h3>
-
-							<?php if( $tab_thumbnail ) : ?>
-								<img alt="" src="<?php echo $tab_thumbnails;?>"> 
-							<?php endif;
 							
-							echo $tab_description; 
-							
-						?></div>
+						
+						<?php echo $tab_description; ?></div>
 								
 						<?php
 							endwhile;  ?>
@@ -113,17 +105,17 @@ get_header(); ?>
 				
 		<?php endif;
 
-			if( have_rows('content_section') ):
+			if( have_rows('content_block') ):
 
-				while( have_rows('content_section') ): the_row();
+				while( have_rows('content_block') ): the_row();
 					
-					$bg_color = get_sub_field('background_color');
-					$bg_image = get_sub_field('background_image');
+					$content_header = get_sub_field('content_header');
 					$content = get_sub_field('content');
 
 				?>
 
-					<div class="full-content box-shadow <?php echo $bg_color;?>">
+					<div class="full-content">
+						<h2><?php echo $content_header; ?></h2>
 						<?php echo $content; ?>					
 					</div>
 
@@ -132,17 +124,17 @@ get_header(); ?>
 
 			endif;
 
-			if( have_rows('services_summary') ):
+			if( have_rows('additional_septic_services') ):
 
 				?>
 				<h2>Septic Services We Offer</h2>
 				<div class="services-summary">
 				<?php
 
-				while( have_rows('services_summary') ): the_row(); 
+				while( have_rows('additional_septic_services') ): the_row(); 
 
-					$title = get_sub_field('title');
-					$summary = get_sub_field('summary');
+					$title = get_sub_field('service_name');
+					$summary = get_sub_field('service_description');
 				
 				?>
 
