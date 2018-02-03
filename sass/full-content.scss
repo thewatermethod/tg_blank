@@ -1,12 +1,4 @@
-.full-content{
-    
-    background: $primary-color-light;
+.full-content{    
     margin: 1em 0;
     padding: 1em;
-
-    &.black {
-        background: $secondary-color-dark;
-        color: white;
-        
-    }
 }

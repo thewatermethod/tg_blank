@@ -5,14 +5,17 @@ window.onload = function(){
        
         var hero = document.querySelector('header.site-header .hero');
 
-        document.onscroll = function() {
-           if ( window.scrollY > 48 ) {
-                hero.style.opacity = 0;
-           } else {
-                hero.style.opacity = 1;
-           }
-             
-        };
+        if( hero ){
+
+            document.onscroll = function() {
+            if ( window.scrollY > 48 ) {
+                    hero.style.opacity = 0;
+            } else {
+                    hero.style.opacity = 1;
+            }
+                
+            };
+        }
 
     }
 
