@@ -9,8 +9,18 @@ get_header(); ?>
 
 	<div id="primary" class="content-area home-tmpl">
 		<main id="main" class="site-main" role="main">
+		
+		
+		<?php 
+		while ( have_posts() ) : the_post();
 
-			<?php 
+			get_template_part( 'template-parts/content', get_post_format() );
+
+
+
+
+
+			
 				// get number of testimonials
 
 				$show_tesimonials = false;
@@ -151,6 +161,8 @@ get_header(); ?>
 
 			endif;
 
+			
+			endwhile; // End of the loop.
 			?>
 
 
