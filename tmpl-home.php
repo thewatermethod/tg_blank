@@ -14,23 +14,18 @@ get_header(); ?>
 		<?php 
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
-
-
-
-
-
+			get_template_part( 'template-parts/content', 'page' );
 			
 				// get number of testimonials
 
-				$show_tesimonials = false;
+				$show_testimonials = false;
 
 				if( get_field('add_testimonials_block')  ):
-					$show_tesimonials = true;
+					$show_testimonials = true;
 					$value = 4;
 				endif;
 			
-				if( $show_tesimonials ) {
+				if( $show_testimonials ) {
 					
 					$testimonial_args = array(
 						'post_type' => 'testimonial',
