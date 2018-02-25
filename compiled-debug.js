@@ -1,4 +1,6 @@
 window.onload = function(){
+
+
     if( document.querySelector('body').classList.contains('page-template-tmpl-home') || document.querySelector('body').classList.contains('page-template-tmpl-full')){
         insertSearch( '#main-menu');
         sizeQuotes();
@@ -15,6 +17,8 @@ window.onload = function(){
         };
 
     }
+
+    isIE();
 
     insertPhone();
 
@@ -135,6 +139,20 @@ jQuery(document).ready(function() {
 
 });
 
+
+function isIE() {
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+       document.querySelector('body').classList.add('isIE');
+       return true;
+    }
+
+
+    return false;
+}
 /**
  * File navigation.js.
  *

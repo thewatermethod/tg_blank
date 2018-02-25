@@ -48,6 +48,10 @@ div.content-area {
 
 }
 
+body.isIE div.content-area.home-tmpl {
+	margin: inherit;
+}
+
 .page-template-tmpl-full div.content-area {
 	max-width: $content-max;
 	margin: auto;
