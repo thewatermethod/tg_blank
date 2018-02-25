@@ -35,6 +35,16 @@ div.site-content .flexy{
 
 }
 
+body.isIE div.site-content .flexy{
+
+	@media( max-width: 1000px){
+
+		display: block;
+
+	}
+
+}
+
 div.content-area {
 	flex-basis: 0;
 	flex-grow: 3;

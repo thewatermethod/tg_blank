@@ -36,14 +36,14 @@ gulp.task( 'build-sass', function(){
 gulp.task('compress-js', function() {
 return gulp.src(['js/*.js'])
    .pipe( concat( 'compiled.js' ) )
-    .pipe(minify({
-        ext:{
-            src:'-debug.js',
-            min:'.js'
-        },
-        exclude: [],
-        ignoreFiles: []
-    }))
+    // .pipe( minify({
+    //     ext:{
+    //         src:'-debug.js',
+    //         min:'.js'
+    //     },
+    //     exclude: [],
+    //     ignoreFiles: []
+    // }))
     .pipe(gulp.dest(''))
 });
 

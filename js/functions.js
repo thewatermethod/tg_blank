@@ -1,11 +1,18 @@
+// forEach polyfill
+(function () {
+    if ( typeof NodeList.prototype.forEach === "function" ) return false;
+    NodeList.prototype.forEach = Array.prototype.forEach;
+})();
+
 window.onload = function(){
 
+    isIE();
 
     if( document.querySelector('body').classList.contains('page-template-tmpl-home') || document.querySelector('body').classList.contains('page-template-tmpl-full')){
         insertSearch( '#main-menu');
         sizeQuotes();
        
-        var hero = document.querySelector('header.site-header .hero');
+        var hero = document.querySelector('headenr.site-header .hero');
 
         if( hero ){
             document.onscroll = function() {
@@ -18,12 +25,7 @@ window.onload = function(){
         }
     }
 
-    isIE();
-
     insertPhone();
-
-
-
 
 };
 
@@ -33,19 +35,21 @@ function sizeQuotes(){
     var quotes = document.querySelectorAll('.quote');
     
     if( window.innerWidth > 800){
-        quotes.forEach(element => {
+        quotes.forEach( function(element) {
             heights.push( element.clientHeight );
         });
 
         heights.sort();
         var max = heights[ heights.length-1 ];
-
-        quotes.forEach(element => {
+  
+        quotes.forEach( function(element) {
             element.style.color = 'black';
             element.style.height = max + 'px';
         });
+
     } else {
-        quotes.forEach(element => {
+
+        quotes.forEach( function(element) {
             element.style.color = 'black';
             element.style.height = 'auto';
         });       

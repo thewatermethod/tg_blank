@@ -6,6 +6,15 @@
     @media( max-width: 800px ){
         flex-direction: column;
     } 
+}
+
+body.isIE .testimonials .testimonial {
+
+    min-width: 25%;
+
+    @media( max-width: 800px ){
+        min-width: 100%;
+    } 
 
 }
 

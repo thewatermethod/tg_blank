@@ -1,5 +1,6 @@
 window.onload = function(){
 
+    isIE();
 
     if( document.querySelector('body').classList.contains('page-template-tmpl-home') || document.querySelector('body').classList.contains('page-template-tmpl-full')){
         insertSearch( '#main-menu');
@@ -18,12 +19,7 @@ window.onload = function(){
         }
     }
 
-    isIE();
-
     insertPhone();
-
-
-
 
 };
 
@@ -141,6 +137,8 @@ jQuery(document).ready(function() {
 
 
 function isIE() {
+
+    console.log( "is ie called" );
 
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf("MSIE ");
