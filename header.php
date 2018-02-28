@@ -19,7 +19,6 @@
 <?php wp_head(); ?>
 
 <?php tg_google_fonts(); ?>
-<?php tg_get_color_scheme(); ?>
 <?php $logo = tg_get_logo(); ?>
 
 <?php 
