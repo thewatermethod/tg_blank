@@ -3,11 +3,15 @@
     margin-bottom: 20px;
     position: relative;
     overflow: hidden;
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
     line-height: 1.5;
     font-weight: 300;
    -webkit-font-smoothing: antialiased;
+
+   @media( max-width: 130px ){
+    width: 70%;
+  }
 
   @media( max-width: 850px ){
     width: 100%;
