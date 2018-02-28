@@ -9,7 +9,6 @@ h1.site-title, p.site-title{
 
 
 header.site-header {
-
 	z-index: 5;
 
 	@media( max-width:850px ){
@@ -17,6 +16,7 @@ header.site-header {
 	}
 
 	&.header-image {
+		background-attachment: fixed;
 		background-size: cover;
 		background-repeat: no-repeat;
 		min-height: 55vh;
@@ -30,6 +30,19 @@ header.site-header {
 		}		
 
 	}
+
+	.home-page-hero-image {
+		@extend %box-shadow;
+		margin: 1em 30%;
+		width: 40%;
+	
+		@media( max-width: 850px ){
+			margin: auto;
+			width: 100%;
+		}	
+
+	}
+
 
 	// this wraps the logo and the menu
 	.flexy{		
@@ -60,3 +73,4 @@ header.site-header {
 	}
 
 }
+

@@ -89,10 +89,20 @@
 			<?php 
 				if( is_home() || is_front_page() ):
 					tg_get_header_message(); 
-				endif;
-			?>
+				endif;	?>
+
+
 
 		</div><!-- inner -->
+			<?php 
+				if( is_home() || is_front_page() ) {
+					if( get_field('hero_image') ){
+						$hero = get_field('hero_image'); ?>
+						<img src= "<?php echo $hero; ?>" alt="" class="home-page-hero-image">
+			<?php
+					} 
+				} ?>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content inner">
