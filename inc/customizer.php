@@ -12,7 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 require_once 'googlefonts.php';
-require_once 'get-color-scheme.php';
 require_once 'header_message.php';
 require_once 'get_logo.php';
 
